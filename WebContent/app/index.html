@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="/js/appModule/appModule.js"></script>
+<script src="/js/appModule/controller/BodyController.js"></script>
+<script src="/js/appModule/controller/ListController.js"></script>
+<script src="/js/appModule/filter/lengthFilter.js"></script>
+</head>
+<body ng-controller="BodyController">
+	<main class="container">
+		<div>
+			<label>Nom :</label>
+			<input type="text" ng-model="yourName" ng-model-options="{debounce:500}"
+				placeholder="Enter a name here" class="form-control"> <br/>
+			<input type="text" ng-model="yourName" ng-model-options="{updateOn: 'blur'} "
+				placeholder="Enter a name here" class="form-control">
+			<hr>
+			<h1>{{ yourName | uppercase}} je t'emmerde.</h1>
+		</div>
+		<hr/>
+		<div class="container" ng-controller="ListController">
+			<div class="row">
+				<div class="col-sm-6">
+					<form>
+						<div class="form-group">
+							<label for="filter">Filtrer la liste par :</label>
+							<input type="text" ng-model="filterText" placeholder="Enter a filter here" class="form-control" id="filter">
+						</div>
+						<div class="form-group">
+							<label for="lengthSelect">Longeur maximale :</label>
+							<select ng-model="length" class="form-control">
+								<option ng-repeat="i in getNumber(number) track by $index" id="lengthSelect">{{$index+1}}</option>
+							</select>
+						</div>
+					</form>
+					
+				</div>
+				<div class="col-sm-6">
+					<ul>
+						<li ng-repeat="item in list | filter : filterText | lengthFilter : length" ng-click="writeItem(item)">{{ item }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
