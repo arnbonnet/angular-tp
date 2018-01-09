@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-sm-6">
+		<form>
+			<div class="form-group">
+				<label for="filter">Filtrer la liste par :</label>
+				<input type="text" ng-model="filterText.name" placeholder="Enter a filter here" class="form-control" id="filter">
+			</div>
+		</form>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="people in list | filter : filterText">
+				<a ng-href="#!/people/{{people.id}}">
+					<span ng-bind="people.name"></span>
+					- <span ng-bind="people.height"></span> cm
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -12,9 +12,10 @@
 <body ng-controller="BodyController">
 	<main class="container">
 		<div>
-			<label>Nom :</label>
+			<label>Nom1 :</label>
 			<input type="text" ng-model="yourName" ng-model-options="{debounce:500}"
 				placeholder="Enter a name here" class="form-control"> <br/>
+			<label>Nom2 :</label>
 			<input type="text" ng-model="yourName" ng-model-options="{updateOn: 'blur'} "
 				placeholder="Enter a name here" class="form-control">
 			<hr>
@@ -39,8 +40,8 @@
 					
 				</div>
 				<div class="col-sm-6">
-					<ul>
-						<li ng-repeat="item in list | filter : filterText | lengthFilter : length" ng-click="writeItem(item)">{{ item }}</li>
+					<ul class="list-group">
+						<li class="list-group-item" ng-repeat="item in list | filter : filterText | lengthFilter : length" ng-click="writeItem(item)">{{ item }}</li>
 					</ul>
 				</div>
 			</div>
