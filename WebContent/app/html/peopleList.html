@@ -9,7 +9,8 @@
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="people in list | filter : filterText">
 				<a ng-href="#!/people/{{people.id}}">
-					<span ng-bind="people.name"></span>
+					<span ng-bind="people.id"></span>
+					- <span ng-bind="people.name"></span>
 					- <span ng-bind="people.height"></span> cm
 				</a>
 			</li>
