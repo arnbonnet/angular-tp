@@ -3,18 +3,15 @@
  */
 var starwarsModule =  angular.module("starwars");
 
-starwarsModule.controller('NamesListController', function($http, $scope) {
+starwarsModule.controller('NamesListController', function($http, $scope, StarwarsService) {
 	$scope.list = [];
+	
 	function loadPage(page) {
 		return $http.get('https://swapi.co/api/people', {params:{page:page}}).then(function(response){
 			for(var index in response.data.results) {
 				var people = response.data.results[index];
 				
-				var url = people.url;
-				url = url.substring(0, url.length-1);
-				
-				var id = url.substring(url.lastIndexOf('/')+1);
-				people.id = parseInt(id);
+				people.id = StarwarsService.calculateId(people);
 				
 				$scope.list.push(people);
 			}
@@ -25,6 +22,7 @@ starwarsModule.controller('NamesListController', function($http, $scope) {
 		});
 		
 	}
+	
 	loadPage(1);
 	
 	$scope.showPeople = function(people) {
