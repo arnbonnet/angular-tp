@@ -7,13 +7,22 @@
 			</div>
 		</form>
 		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="people in list | filter : filterText">
+			<li class="list-group-item" ng-repeat="people in list | filter : filterText track by people.id">
 				<a ng-href="#!/people/{{people.id}}">
 					<span ng-bind="people.id"></span>
 					- <span ng-bind="people.name"></span>
 					- <span ng-bind="people.height"></span> cm
+					<!-- TEST SCOPES -->
+					<span ng-bind="$index" ng-hide="true"></span>
+					<span ng-bind="$first" ng-hide="true"></span>
+					<span ng-bind="$middle" ng-hide="true"></span>
+					<span ng-bind="$last" ng-hide="true"></span>
 				</a>
 			</li>
 		</ul>
+		<div ng-if="dataLoading">
+    		Veuillez patienter... <br><br>
+    		<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+		</div>
 	</div>
 </div>

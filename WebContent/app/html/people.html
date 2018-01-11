@@ -1,17 +1,20 @@
 <div class="row">
 	<div class="col-sm-6">
 		<ul class="list-group">
-			<li class="list-group-item"><b>Name :</b> {{people.name}}</li>
-			<li class="list-group-item">Height : {{people.height}}</li>
-			<li class="list-group-item">Mass : {{people.mass}}</li>
-			<li class="list-group-item">Hair color : {{people.hair_color}}</li>
-			<li class="list-group-item">Skin color : {{people.skin_color}}</li>
-			<li class="list-group-item">Eye color : {{people.eye_color}}</li>
-			<li class="list-group-item">Birth year : {{people.birth_year}}</li>
-			<li class="list-group-item">Gender : {{people.gender}}</li>
+			<li class="list-group-item"><b>Name :</b> {{people.name}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
+			<li class="list-group-item">Height : {{people.height}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
+			<li class="list-group-item">Mass : {{people.mass}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
+			<li class="list-group-item">Hair color : {{people.hair_color}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
+			<li class="list-group-item">Skin color : {{people.skin_color}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
+			<li class="list-group-item">Eye color : {{people.eye_color}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
+			<li class="list-group-item">Birth year : {{people.birth_year}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
+			<li class="list-group-item">Gender : {{people.gender}} <i ng-if="dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></li>
 		</ul>
 	</div>
 </div>
+Click me <input type="checkbox" ng-model="checked"><br>
+ng-show <span ng-show="checked">affiché quand la checkbox est cochée</span><br>
+ng-if <span ng-if="checked">affiché quand la checkbox est cochée</span><br>
 <div class="col">
 	<ul class="pager">
 		<li class="previous"><a href="#!/people"><span aria-hidden="true">&larr;</span> Previous</a></li>
