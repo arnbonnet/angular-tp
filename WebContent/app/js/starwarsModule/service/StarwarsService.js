@@ -53,6 +53,7 @@ starwarsModule.factory('StarwarsService',['$http','$q', function($http, $q) {
 	};
 	
 	var peoplePromises = {};
+	
 	var getOneLogic = function(id) {
 		if(!peoplePromises[id]) {
 			peoplePromises[id] = $http.get('https://swapi.co/api/people/' + id);			
