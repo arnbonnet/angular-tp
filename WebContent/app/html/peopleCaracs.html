@@ -1,0 +1,35 @@
+<ul class="list-group">
+	<li class="list-group-item">
+		<b>Name :</b> {{$ctrl.people.name}}
+		<span sw-movies="$ctrl.people"></span>
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	</li>
+	<li class="list-group-item">
+		Height : {{$ctrl.people.height}} 
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	</li>
+	<li class="list-group-item">
+		Mass : {{$ctrl.people.mass}} 
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	</li>
+	<li class="list-group-item">
+		Hair color : {{$ctrl.people.hair_color}} 
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	</li>
+	<li class="list-group-item">
+		Skin color : {{$ctrl.people.skin_color}} 
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	</li>
+	<li class="list-group-item">
+		Eye color : {{$ctrl.people.eye_color}} 
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	</li>
+	<li class="list-group-item">
+		Birth year : {{$ctrl.people.birth_year}} 
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	</li>
+	<li class="list-group-item">
+		Gender : {{$ctrl.people.gender}} 
+		<i ng-if="$ctrl.dataLoading" class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+	 </li>
+ </ul>
